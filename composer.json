@@ -1,0 +1,30 @@
+{
+    "name": "ivopetkov/touch-events-js-bearframework-addon",
+    "description": "Touch Events JS package for Bear Framework",
+    "keywords": [
+        "touch events",
+        "Bear Framework addon"
+    ],
+    "homepage": "https://github.com/ivopetkov/touch-events-js-bearframework-addon",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivo Petkov",
+            "email": "ivo@ivopetkov.com",
+            "homepage": "http://ivopetkov.com"
+        }
+    ],
+    "require": {
+        "php": "7.1.*|7.2.*|7.3.*|7.4.*|8.0.*|8.1.*|8.2.*|8.3.*",
+        "bearframework/bearframework": "1.*",
+        "ivopetkov/client-packages-bearframework-addon": "1.*"
+    },
+    "require-dev": {
+        "bearframework/addon-tests": "1.*"
+    },
+    "autoload": {
+        "files": [
+            "autoload.php"
+        ]
+    }
+}
