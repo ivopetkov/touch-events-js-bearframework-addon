@@ -155,7 +155,12 @@ ivoPetkov.bearFrameworkAddons.touchEvents = ivoPetkov.bearFrameworkAddons.touchE
         container.addEventListener('pointermove', pointerMoveHandler);
         container.addEventListener('pointerup', pointerUpHandler);
         container.addEventListener('pointercancel', pointerUpHandler);
-        container.addEventListener('pointerout', pointerUpHandler);
+        container.addEventListener('pointerout', function (e) {
+            if (isChildOf(container, e.target)) {
+                return;
+            }
+            pointerUpHandler(e);
+        });
         container.addEventListener('pointerleave', pointerUpHandler);
 
         return eventTarget;
@@ -263,7 +268,12 @@ ivoPetkov.bearFrameworkAddons.touchEvents = ivoPetkov.bearFrameworkAddons.touchE
         container.addEventListener('pointermove', pointerMoveHandler);
         container.addEventListener('pointerup', pointerUpHandler);
         container.addEventListener('pointercancel', pointerUpHandler);
-        container.addEventListener('pointerout', pointerUpHandler);
+        container.addEventListener('pointerout', function (e) {
+            if (isChildOf(container, e.target)) {
+                return;
+            }
+            pointerUpHandler(e);
+        });
         container.addEventListener('pointerleave', pointerUpHandler);
 
         return eventTarget;
