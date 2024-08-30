@@ -80,7 +80,9 @@ ivoPetkov.bearFrameworkAddons.touchEvents = ivoPetkov.bearFrameworkAddons.touchE
         }
 
         container.addEventListener("touchstart", function (e) {
-            e.preventDefault();
+            if (element.contains(e.target)) {
+                e.preventDefault();
+            }
         }, { passive: false });
 
         var eventTarget = makeEventTarget();
@@ -172,7 +174,9 @@ ivoPetkov.bearFrameworkAddons.touchEvents = ivoPetkov.bearFrameworkAddons.touchE
         }
 
         container.addEventListener("touchstart", function (e) {
-            e.preventDefault();
+            if (element.contains(e.target)) {
+                e.preventDefault();
+            }
         }, { passive: false });
 
         var eventTarget = makeEventTarget();
@@ -335,8 +339,10 @@ ivoPetkov.bearFrameworkAddons.touchEvents = ivoPetkov.bearFrameworkAddons.touchE
             container = element;
         }
 
-        element.addEventListener("touchstart", function (e) {
-            e.preventDefault();
+        container.addEventListener("touchstart", function (e) {
+            if (element.contains(e.target)) {
+                e.preventDefault();
+            }
         }, { passive: false });
 
         var eventTarget = makeEventTarget();
