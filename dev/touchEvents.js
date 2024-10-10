@@ -81,6 +81,11 @@ ivoPetkov.bearFrameworkAddons.touchEvents = ivoPetkov.bearFrameworkAddons.touchE
 
         container.addEventListener("touchstart", function (e) {
             if (element.contains(e.target)) {
+                e.stopPropagation();
+            }
+        }, { passive: false });
+        container.addEventListener("touchmove", function (e) {
+            if (element.contains(e.target)) {
                 e.preventDefault();
             }
         }, { passive: false });
@@ -174,6 +179,11 @@ ivoPetkov.bearFrameworkAddons.touchEvents = ivoPetkov.bearFrameworkAddons.touchE
         }
 
         container.addEventListener("touchstart", function (e) {
+            if (element.contains(e.target)) {
+                e.stopPropagation();
+            }
+        }, { passive: false });
+        container.addEventListener("touchmove", function (e) {
             if (element.contains(e.target)) {
                 e.preventDefault();
             }
@@ -340,6 +350,11 @@ ivoPetkov.bearFrameworkAddons.touchEvents = ivoPetkov.bearFrameworkAddons.touchE
         }
 
         container.addEventListener("touchstart", function (e) {
+            if (element.contains(e.target)) {
+                e.stopPropagation();
+            }
+        }, { passive: false });
+        container.addEventListener("touchmove", function (e) {
             if (element.contains(e.target)) {
                 e.preventDefault();
             }
