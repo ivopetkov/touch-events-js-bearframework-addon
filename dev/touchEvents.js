@@ -349,12 +349,17 @@ ivoPetkov.bearFrameworkAddons.touchEvents = ivoPetkov.bearFrameworkAddons.touchE
             container = element;
         }
 
+        var elementTouchAction = null;
         container.addEventListener("touchstart", function (e) {
             if (element.contains(e.target)) {
                 e.stopPropagation();
+                elementTouchAction = getComputedStyle(element).getPropertyValue('touch-action');
             }
         }, { passive: false });
         container.addEventListener("touchmove", function (e) {
+            if(elementTouchAction !== 'auto'){
+                return;
+            }
             if (element.contains(e.target)) {
                 e.preventDefault();
             }
